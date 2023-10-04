@@ -2,7 +2,7 @@
 
 def bottle_song(num_bottles):
 	"""
-	Returns a string with the # of bottles of beer on the wall
+	Returns a string with the # of bottles of beer on the wall song
 	Arguments:
 	num_bottles - int - Number of bottles the song should start with.
 	"""
@@ -14,7 +14,8 @@ def bottle_song(num_bottles):
 		num_bottles = num_bottles -1
 
 	bottle_song += f"Take one down and pass it around, no more bottles of beer on the wall.\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, {orginial_bottles} bottles of beer on the wall."
-	pass
+
+	return bottle_song
 
 
 
