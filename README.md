@@ -1,8 +1,8 @@
 # 99 Bottles
 
-Write a program that can print the song "99 Bottles of Beer".
+Program asks the user for the number of bottles the song should start with. Then prints the song into a string and outputs it into the console. The user is able to decide either to create the song with a loop or func recursion
 
-## The Song
+## Song Example
 
 ```bash
 99 bottles of beer on the wall, 99 bottles of beer.
@@ -32,13 +32,3 @@ Take one down and pass it around, no more bottles of beer on the wall.
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
 ```
-
-## Considerations
-
-* Take note of how the 'bottles' turns to 'bottle' at the right time
-* You can certainly use `while`, `for`, `forEach`, and various other built in methods
-
-## Challenge Yourself
-
-* Make your code able to take in and account for any bottle amount
-* Refactor your code so it doesn't use any loops or iteration whatsoever

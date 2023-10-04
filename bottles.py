@@ -10,10 +10,10 @@ def bottle_song_loop(num_bottles):
 	orginial_bottles = num_bottles
 	while num_bottles > 0:
 
-		bottle_song += f"{num_bottles} bottles of beer on the wall, {num_bottles} bottles of beer. Take one down and pass it around, {num_bottles-1} {'bottles' if num_bottles > 2 else 'bottle' } of beer on the wall.\n"
+		bottle_song += f"{num_bottles} bottles of beer on the wall, {num_bottles} bottles of beer. Take one down and pass it around, {num_bottles-1 if num_bottles > 1 else 'No more'} {'bottles' if num_bottles > 2 else 'bottle' } of beer on the wall.\n"
 		num_bottles = num_bottles -1
 
-	bottle_song += f"Take one down and pass it around, no more bottles of beer on the wall.\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, {orginial_bottles} bottles of beer on the wall."
+	bottle_song += f"No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, {orginial_bottles} bottles of beer on the wall."
 
 	return bottle_song
 
@@ -25,22 +25,24 @@ def bottle_song_func_loop(bottle_song, orginial_bottles, current_bottles):
 	num_bottles  - int    - Number of bottles the song is currently on.
 	"""
 	if current_bottles > 0:
-		bottle_song += f"{current_bottles} bottles of beer on the wall, {current_bottles} bottles of beer. Take one down and pass it around, {current_bottles-1} {'bottles' if current_bottles > 2 else 'bottle' } of beer on the wall.\n"
+		bottle_song += f"{current_bottles} bottles of beer on the wall, {current_bottles} bottles of beer. Take one down and pass it around, {current_bottles-1 if current_bottles > 1 else 'No more'} {'bottles' if current_bottles > 2 else 'bottle' } of beer on the wall.\n"
 		current_bottles -= 1
 
 		return bottle_song_func_loop(bottle_song, orginial_bottles, current_bottles)
 	else:
-		bottle_song += f"Take one down and pass it around, no more bottles of beer on the wall.\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, {orginial_bottles} bottles of beer on the wall."
+		bottle_song += f"No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, {orginial_bottles} bottles of beer on the wall."
 		return bottle_song
 	
 
 
+print("Menu\n1 - Create song with loop\n2 - Create song with function recursion")
+user_input = int(input("Which method do you want to use?"))
 
-
-
-bottles_user_input = int(input("How many bottles do you want to start with?"))
-print(bottle_song_loop(bottles_user_input))
-
-
-bottles_user_input = int(input("How many bottles do you want to start with?"))
-print(bottle_song_func_loop("",bottles_user_input,bottles_user_input))
+if user_input == 1:
+	bottles_user_input = int(input("How many bottles do you want to start with?"))
+	print(bottle_song_loop(bottles_user_input))
+elif user_input == 2:
+	bottles_user_input = int(input("How many bottles do you want to start with?"))
+	print(bottle_song_func_loop("",bottles_user_input,bottles_user_input))
+else:
+	print("Incorrect Input")
